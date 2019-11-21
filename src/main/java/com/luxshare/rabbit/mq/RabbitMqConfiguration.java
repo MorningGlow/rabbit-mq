@@ -43,5 +43,24 @@ public class RabbitMqConfiguration {
         return BindingBuilder.bind(queueB).to(topicExchange).with("topic.#");
     }
 
+    @Bean
+    public FanoutExchange fanoutExchange() {
+        return new FanoutExchange("fanoutExchange");
+    }
+
+    @Bean
+    public Binding bindingFanoutExchangeWithQueueA(Queue queueA , FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(queueA).to(fanoutExchange);
+    }
+
+    @Bean
+    public Binding bindingFanoutExchangeWithQueueB(Queue queueB , FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(queueB).to(fanoutExchange);
+    }
+
+    @Bean
+    public Binding bindingFanoutExchangeWithQueueC(Queue queueC , FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(queueC).to(fanoutExchange);
+    }
 
 }

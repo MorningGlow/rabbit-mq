@@ -26,4 +26,9 @@ public class RabbitMqTest {
         sendMessage.sendMessageTopicExchange();
     }
 
+    @Test
+    public void testFanout() {
+        sendMessage.sendMessageFanoutExchange();
+    }
+
 }

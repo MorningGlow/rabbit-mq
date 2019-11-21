@@ -30,5 +30,7 @@ public class SendMessage {
         rabbitTemplate.convertAndSend("topicExchange","topic.a.b",new Person("topic.#", 22));
     }
 
-
+    public void sendMessageFanoutExchange() {
+        rabbitTemplate.convertAndSend("fanoutExchange","",new Person("fanout",33));
+    }
 }
