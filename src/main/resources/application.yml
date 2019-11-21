@@ -1,0 +1,9 @@
+spring:
+  rabbitmq:
+    host: 114.67.72.153
+    port: 5672
+    username: root
+    password: luxshare
+
+server:
+  port: 8088
